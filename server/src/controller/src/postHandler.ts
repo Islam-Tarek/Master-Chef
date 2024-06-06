@@ -20,6 +20,7 @@ import {
 
 const dompurify = createDomPurify(new JSDOM().window)
 
+
 export const listPostsHandler : ExpressHandler<ListPostsRequest, ListPostsResponse>  = async (_req, res) =>{
     const activeUserId = res.locals.userId;
     const firstTime = db.checkUserInformation(activeUserId);
@@ -42,6 +43,8 @@ export const listPostsHandler : ExpressHandler<ListPostsRequest, ListPostsRespon
         return res.sendStatus(500); 
       }
 }
+
+
 
 export const createPostHandler : ExpressHandler<CreatePostRequset, CreatePostResponse> = async (req, res) =>{
     const title = req.body.title;
@@ -85,11 +88,12 @@ export const createPostHandler : ExpressHandler<CreatePostRequset, CreatePostRes
         return `<img${newAttributes}${p2}`;
     });
 
+
     const post: Post = {
         id: crypto.randomUUID(),
         title: title,
         content: newContent,
-        userId: res.locals.userId,
+        userId:res.locals.userId,
         postedAt: (new Date()).toLocaleString()
     }
 

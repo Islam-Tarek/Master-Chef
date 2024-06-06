@@ -1,13 +1,15 @@
 async function sendLikePostTrigger(numberOfRequests: number){
-    console.log(`creating  ${numberOfRequests}  GET REQUEST (Get All posts (1000 post))`)
+    console.log(`creating  ${numberOfRequests}  POST REQUEST (Creating ${numberOfRequests} likes on specific post))`)
     const START = Date.now();
     console.log('PROCESS STRTED AT  = '+ START);
     let i = 1;
 
      while(i <= numberOfRequests){
-        await sendLikePostRequest('http://localhost:3000/like/0e7b233a-5b54-43bb-8048-4c4a07573ac1',  {
-            "userId": "0277917c-a8ad-4a39-8a5e-57e2b8093d5d"
-        });
+        await sendLikePostRequest('http://localhost:3000/like/:postId',  
+            {
+                userId: "781df0b5-5340-4781-bd03-de4a62ef6bc4"
+            }
+        );
     
         i++;
     }
@@ -15,6 +17,7 @@ async function sendLikePostTrigger(numberOfRequests: number){
     console.log('PROCESS ENDED AT  = '+END);
     console.log('ALL REQUESTS FULLFILLED AT   =  ' + (END-START)/1000 + ' sec');
 }
+
 
 
 // Function to send a single POST request
@@ -38,22 +41,26 @@ async function sendLikePostRequest(url: string, data: any) {
 
 
 
+
+
 async function sendGetTrigger(numberOfRequests: number){
-        console.log(`creating  ${numberOfRequests}  GET REQUEST (Get All posts (1000 post))`)
-        const START = Date.now();
-        console.log('PROCESS STRTED AT  = '+ START);
-        let i = 1;
+    console.log(`creating  ${numberOfRequests}  GET REQUEST (Get specific post by Id)
+            `)
+    const START = Date.now();
+    console.log('PROCESS STRTED AT  = '+ START);
+    let i = 1;
 
-        while(i <= numberOfRequests){
-           await sendGetRequest('http://localhost:3000/homepage') // for get all posts
-        //    await sendGetRequest('http://localhost:3000/getpost/:postId') // for get specific posts
+    while(i <= numberOfRequests){
+    //    await sendGetRequest('http://localhost:3000/homepage') // for get all posts
+       await sendGetRequest('http://localhost:3000/getpost/001f35f2-8303-4cc8-84ed-cf4c4a21aa93') // for get specific posts
 
-            i++;
-        }
-        const END = Date.now();
-        console.log('PROCESS ENDED AT  = '+END);
-        console.log('ALL REQUESTS FULLFILLED AT   =  ' + (END-START)/1000 + ' sec');
+        i++;
+    }
+    const END = Date.now();
+    console.log('PROCESS ENDED AT  = '+END);
+    console.log('ALL REQUESTS FULLFILLED AT   =  ' + (END-START)/1000 + ' sec');
 }
+
 
 
 
@@ -86,7 +93,7 @@ async function sendPostTrigger(numberOfRequests: number){
         await sendPostRequest('http://localhost:3000/createpost',  {
             "title": `TEST ${i}`,
             "content": `POST ${i}`,
-            "userId": "0277917c-a8ad-4a39-8a5e-57e2b8093d5d"
+            "userId": "781df0b5-5340-4781-bd03-de4a62ef6bc4"
         });
     
         i++;

@@ -10,6 +10,7 @@ import { db } from "../../../../model";
 export const likeHandler: ExpressHandler<CreateLikeRequest, CreateLikeResponse> = async (req, res) =>{
     const postId = req.url.split('/').pop()!;
     const userId = res.locals.userId;
+
     try{
         const newLike: Like = {
             id: crypto.randomUUID(),
@@ -24,7 +25,8 @@ export const likeHandler: ExpressHandler<CreateLikeRequest, CreateLikeResponse> 
             await db.createLike(newLike);
             if(updateLikesCount !== undefined){
                 const likesCount = updateLikesCount!.length + 1;
-                return res.send({likesCount: likesCount });
+                return res
+                        .send({likesCount: likesCount });
             }
         }else{
             if(updateLikesCount !== undefined){

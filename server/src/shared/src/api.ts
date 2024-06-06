@@ -6,7 +6,6 @@ import {
  } from "./types";
 
 
-// post API
 export type CreatePostRequset = Pick<Post, 'title'|'content'>
 export interface CreatePostResponse{};
 
@@ -42,7 +41,7 @@ export interface DeleteCommentResponse {};
 // like API
 export interface CreateLikeRequest {};
 export interface CreateLikeResponse {
-    likesCount: number
+    likesCount: number,
 };
 
 export interface DeleteLikeRequest {};
