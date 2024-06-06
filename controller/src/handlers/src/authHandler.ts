@@ -33,23 +33,23 @@ export const signInHandler: ExpressHandler<SignInRequest, SignInResponse> = asyn
 
     const firstTime = await db.checkUserInformation(userId);
     if(firstTime === undefined){
-        res.status(200)
-            .cookie('token', jwt,{
-                httpOnly:true,
-                path:"/",
-                maxAge: 7 * 24 * 60 * 60 * 1000
+       return res.cookie('token', jwt,{
+            httpOnly:true,
+            path:"/",
+            maxAge: 7 * 24 * 60 * 60 * 1000
             })
-            .redirect('/createuserprofile');
+           .status(200)
+           .redirect('/createuserprofile');
     }
     
     
-    return res.status(200)
-              .cookie('token', jwt, {
+    return res.cookie('token', jwt, {
                 httpOnly:true,
-                    path:"/",
-                    maxAge: 7 * 24 * 60 * 60 * 1000
+                path:"/",
+                maxAge: 7 * 24 * 60 * 60 * 1000
                 })
-              .redirect('/homepage');
+             .status(200)
+            .redirect('/homepage');
 };
 
 
