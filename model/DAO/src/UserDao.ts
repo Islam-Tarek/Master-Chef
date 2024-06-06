@@ -1,4 +1,4 @@
-import { User } from "../../../server";
+import { User } from "../../../controller";
 
 export interface UserDao {
     createUser(user: User) : Promise<void>;

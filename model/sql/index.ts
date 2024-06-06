@@ -14,7 +14,7 @@ import {
     User, 
     Post, 
     Like
-} from "../../server/index";
+} from "../../controller/index";
 
 export class SqlDataStore implements DataStore {
   

@@ -2,7 +2,7 @@ import {
     FullPostInformation,
     UserInformation,
     LikesCount
- } from "../../../server";
+ } from "../../../controller";
 
 export interface userProfileDao{
     createUserProfile(userInfo: UserInformation): Promise<void>;

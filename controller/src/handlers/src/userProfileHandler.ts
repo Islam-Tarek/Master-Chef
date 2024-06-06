@@ -8,7 +8,7 @@ import {
     GetUserProfileInformationResponse,
     UserProfileInformationRequest,
     UserProfileInformationResponse, 
-} from "../../../src/shared";
+} from "../../shared";
 import {db} from "../../../../model"
 
 

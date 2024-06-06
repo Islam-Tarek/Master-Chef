@@ -9,7 +9,7 @@ import {
     personalProfileHandler,
     userProfileHandler,
     createCommentHandler,
-     deleteCommentHandler,
+    deleteCommentHandler,
     createPostHandler,
     deletePostHandler,
     listPostsHandler,
@@ -20,7 +20,7 @@ import {
     likeHandler,
     authMiddleware,
     RequestLoggerMiddleware
-} from "./server/index";
+} from "./controller/index";
 import {initdb } from "./model";
 import path from "path";
 
@@ -33,7 +33,7 @@ const app = express();
 app.use(express.json());
 app.use('/css',express.static(path.join( __dirname, '/views/css')));
 app.use(cors());
-dotenv.config({path:__dirname + "/server/src/.env"});
+dotenv.config({path:__dirname + "/controller/src/.env"});
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:false}));

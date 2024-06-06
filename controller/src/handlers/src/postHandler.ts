@@ -15,7 +15,7 @@ import {
     ListPostsResponse,
     ExpressHandler,
     Post
-} from '../../../src/shared';
+} from '../../shared';
 
 
 const dompurify = createDomPurify(new JSDOM().window)
@@ -76,13 +76,13 @@ export const createPostHandler : ExpressHandler<CreatePostRequset, CreatePostRes
         if (widthExists) {
             newAttributes = newAttributes.replace(/width\s*=\s*"\d+"/, 'width="50"');
         } else {
-            newAttributes = ` width="1200"` + newAttributes;
+            newAttributes = ` width="1100"` + newAttributes;
         }
 
         if (heightExists) {
             newAttributes = newAttributes.replace(/height\s*=\s*"\d+"/, 'height="50"');
         } else {
-            newAttributes = ` height="900"` + newAttributes;
+            newAttributes = ` height="750"` + newAttributes;
         }
 
         return `<img${newAttributes}${p2}`;

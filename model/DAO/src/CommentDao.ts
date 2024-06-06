@@ -1,7 +1,7 @@
 import { 
     FullPostCommentsInformations,
      Comment
-} from "../../../server";
+} from "../../../controller";
 
 export interface CommentDao {
     createComment(comment: Comment) : Promise<void>;

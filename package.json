@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./serverLancher.ts",
+    "start": "nodemon ./server.ts",
     "start:prod": "pm2 delete codersquare; pm2 start --name codersquare \"npx ts-node --transpile-only server.ts\""
   },
   "author": "",

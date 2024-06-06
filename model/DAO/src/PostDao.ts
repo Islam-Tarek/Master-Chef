@@ -1,7 +1,7 @@
 import  {
     FullPostInformation,
      Post
-} from "../../../server";
+} from "../../../controller";
 
 export interface PostDao {
     listPosts() : Promise<Post[] | undefined>;
