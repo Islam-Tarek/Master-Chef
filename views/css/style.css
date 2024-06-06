@@ -1,0 +1,48 @@
+#brandStyle {
+    font-family: "Petit Formal Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+  }
+
+  #brandIcon{
+    font-size: 50px;
+    inline-size: 40px;
+    outline: 40px;
+  }
+
+
+  .heart-icon {
+    font-size: 35px;
+    color: #d365fa; /* Change this to the desired color */
+  }
+
+  .comment-icon{
+    font-size: 35px;
+  }
+
+  .profileInfo{
+    color: #9a9a9a;
+  }
+
+  .userName{
+    color: black;;
+  }
+
+  .userName:hover{
+    color: #9a9a9a;
+  }
+
+  .navbarList{
+    color: black;
+  }
+
+  .navbarListHome:hover{
+    color: #9a9a9a;
+  }
+
+  .navbarListProfile:hover{
+    color: #9a9a9a;
+  }
+
+  

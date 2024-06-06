@@ -1,0 +1,26 @@
+ <%- include('../components/header') %>
+<body>
+
+    <%- include('../components/navbar') %>
+    <div class="container mt-5 pt-5">
+        <form method="post" action="/createpost" class="ms-5">
+            <label for="post_title"> Title </label>
+            <br>
+            <input name="title" type="text" id="post_title" class="form-control">
+            <br><br>
+            <div class="main-content">
+                <label for="post_content">Content</label>
+                <textarea name="content" class="form-control" placeholder="Leave your recipe here" id="post_content" style="height: 100px"></textarea>
+            </div>
+            <button class="btn btn-primary mt-4"  type="submit"> Submit </button>
+        </form>
+    </div>
+
+
+    <div class="text-center">
+        <span>WANT TO LEARN HOW TO WRITE POST BY MARKDOWN ?   <a href="/markdownguide"> MARKDOWN GUIDE </a></span>
+    </div>
+
+</body>
+
+</html>

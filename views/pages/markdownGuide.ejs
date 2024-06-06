@@ -1,0 +1,138 @@
+<%- include('../components/header') %>
+
+    <body >
+        <%- include('../components/navbar') %>
+        <div class="container mt-5 mb-5 pt-5 pb-5">
+        
+        <h2>THIS IS YOUR GUIDE TO LEARN HOW TO WRITE YOUR POST BY MARKDOWN</h2>
+        <br>
+        <hr>
+        <br>
+        <h2>Heading</h2>
+        <br>
+        <h1>Heading 1</h1>
+            <p>WRITE IT SUCH ('# Heading 1')</p>
+        <h2>Heading 2</h2>
+            <p>WRITE IT SUCH ('## Heading 2')</p>
+        <h3>Heading 3</h3>
+            <p>WRITE IT SUCH ('### Heading 3')</p>
+        <h4>Heading 4</h4>
+            <p>WRITE IT SUCH ('#### Heading 4')</p>
+        <h5>Heading 5</h5>
+            <p>WRITE IT SUCH ('##### Heading 5')</p>
+        <h6>Heading 6</h6>
+         <p>WRITE IT SUCH ('###### Heading 6')</p>
+        
+        <hr>
+        <br>
+        
+        <h2>Paragraph</h2>
+            <p>This is normal paragraph text. It requires no special annotation. Simply type what you want to say.</p>
+        
+        <hr>
+        <br>
+
+        <h2>Fonts</h2>
+        <br>
+        <p> <strong>bold text</strong>
+        WRITE IT SUCH (' <strong>bold text</strong>')</p>
+        <p><em>italic text</em>
+        WRITE IT SUCH (' <em>italic text</em>')</p>
+        <p><del>This text has been struck through.</del> 
+        WRITE IT SUCH (' <del>This text has been struck through.</del> ')</p>
+        <br>
+        <h3>Quoted</h3>
+        <br>
+        <blockquote>
+        <p><strong>Tip:</strong> This is an example of quoted text.
+        WRITE IT SUCH (' &gt; <strong>Tip:</strong> This is an example of quoted text. ')</p>
+        </blockquote>
+        <h3>Special characters</h3>
+        <p>Because Markdown syntax uses characters like * and &gt;, you'll have to escape them with a backslash (\\) if you want to display it in your output
+        WRITE IT SUCH (' you have to put backslash before it such * and &gt; but the special case is when want to write backslash write is like that \\ ')</p>
+        <hr>
+        <br>
+        <h3>Ordered list</h3>
+        <ol>
+        <li>This is the <strong>first item</strong> in an ordered list</li>
+        <li>This is the <strong>second item</strong> in an ordered list</li>
+        <li>This is the <strong>third item</strong> in an ordered list<ol>
+        <li>This is the <em>first subitem</em> of the <strong>third item</strong> in the ordered list</li>
+        <li>This is the <em>second subitem</em> of the <strong>third item</strong> in the ordered list</li>
+        </ol>
+        </li>
+        <li>This is the <strong>fourth item</strong> in an unordered list
+        WRITE IT SUCH (' 
+        <p>1. This is the <strong>first item</strong> in an ordered list</p>
+        <p>2. This is the <strong>second item</strong> in an ordered list</p>
+        <p>3. This is the <strong>third item</strong> in an ordered list</p>
+        <p>  1. This is the <em>first subitem</em> of the <strong>third item</strong> in the ordered list</p>
+        <p>  2. This is the <em>second subitem</em> of the <strong>third item</strong> in the ordered list</p>
+        <p>4. This is the <strong>fourth item</strong> in an unordered list </p>
+        ')</li>
+        </ol>
+        <h2>Unordered list</h2>
+        <p>This is the first item in an unordered list
+        This is the second item in an unordered list
+        This is the third item in an unordered list
+                This is the first subitem of the third item in the unordered list
+                This is the second subitem of the third item in the unordered list
+        This is the fourth item in an unordered list
+        WRITE IT SUCH ('
+        <p>* This is the first item in an unordered list</p>
+        <p>* This is the second item in an unordered list</p>
+        <p>* This is the third item in an unordered list</p>
+                <p>* This is the first subitem of the third item in the unordered list</p>
+                <p>* This is the second subitem of the third item in the unordered list</p>
+        <p>* This is the fourth item in an unordered list</p>
+        ')</p>
+        <h2>Tables</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Heading 1</th>
+        <th>Heading 2</th>
+        <th>Heading 3</th>
+        <th>Heading 4</th>
+        <th>Heading 5</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+        <td>Row 1 Column 1</td>
+        <td>Row 1 Column 2</td>
+        <td>Row 1 Column 3</td>
+        <td>Row 1 Column 4</td>
+        <td>Row 1 Column 5</td>
+        </tr>
+        <tr>
+        <td>Row 2 Column 1</td>
+        <td>Row 2 Column 2</td>
+        <td>Row 2 Column 3</td>
+        <td>Row 2 Column 4</td>
+        <td>Row 2 Column 5</td>
+        </tr>
+        <tr>
+        <td>Row 3 Column 1</td>
+        <td>Row 3 Column 2</td>
+        <td>Row 3 Column 3</td>
+        <td>Row 3 Column 4</td>
+        <td>Row 3 Column 5</td>
+        </tr>
+        </tbody></table>
+        <p>WRITE IT SUCH ('
+        <p>| Heading 1      | Heading 2      | Heading 3      | Heading 4      | Heading 5      |</p>
+        <p>| -------------- | -------------- | -------------- | -------------- | -------------- |</p>
+        <p>| Row 1 Column 1 | Row 1 Column 2 | Row 1 Column 3 | Row 1 Column 4 | Row 1 Column 5 |</p>
+       <p> | Row 2 Column 1 | Row 2 Column 2 | Row 2 Column 3 | Row 2 Column 4 | Row 2 Column 5 |</p>
+        <p>| Row 3 Column 1 | Row 3 Column 2 | Row 3 Column 3 | Row 3 Column 4 | Row 3 Column 5 |</p>
+        ')</p>
+        <hr>
+        <br>
+        <h2>Images</h2>
+        <h4>Insert an image using the following syntax:</h4>
+        <h3>WRITE IT SUCH (![Alt text](url/path))</h3>
+    </div>
+
+
+    </body>
+</html>

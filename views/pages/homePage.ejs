@@ -1,0 +1,119 @@
+<%- include('../components/header') %>
+<body>
+    <%- include('../components/navbar') %>
+    <div id="newPost-container" class="container mt-5 ms-5 mb-5 pt-5">
+        <a href="/createpost" name="newpost" class="btn btn-success">New Post</a>
+    </div> 
+    <div class="container-fluid" id="posts-container">
+        <% if (posts && posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+                <div class="card w-250 mb-3 container-sm ms-5 mt-4">
+                    <div class="card-body ">
+                        <div class="pb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/userprofile/<%= post.userId %>" class="ink-offset-2 link-underline link-underline-opacity-0 userName">
+                                      <span class="me-4"><%= post.firstName + ' ' + post.lastName %></span>
+                                    </a>
+                                  </div>
+                                <div class="col-auto">
+                                    <span class="me-5 fw-lighter"> <%= post.postedAt %> </span>
+                                </div>
+                                <div class="col-auto">
+                                    <% if (post.userId === activeUserId) { %>
+                                        <form method="POST" action="/deletepost/<%= post.id %>">
+                                            <button class="btn btn-danger">
+                                                <span class="material-symbols-outlined">
+                                                    delete
+                                                </span>
+                                            </button> 
+                                        </form>
+                                    <% } %>  
+                                </div>
+                            </div>
+                        </div>  
+
+                        <hr class="mb-5">
+
+                        <h3 class="card-title pb-2"> <%= post.title %></h3>
+                        <p class="card-text pb-2"> <%- post.content %> </p>
+
+                        <hr class="mt-5">
+
+                        <div class="row">
+                            <div class="col-4">
+                                <form method="POST" action="/like/<%= post.id %>" id="likeForm">
+                                    <Button type="button" class="btn likeButton ps-4 pe-4"  data-postid="<%= post.id %>">
+                                        <span class="heart-icon">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </span>
+                                    </Button>
+                                    <span>
+                                        Like  <%= post.count_likes %>
+                                    </span>
+                                </form>
+                            </div>                  
+                            <div class="col-4">
+                                <a href="/getpost/<%= post.id %>" class="btn ps-4 pe-4">
+                                    <span class="comment-icon">
+                                        <i class="fa-regular fa-comment"></i>
+                                    </span>
+                                </a>
+                                Comment  <%= post.count_comments %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else{ %>
+            <div class="container mt-5 mb-5 pt-5 pb-5"> No posts</div>
+        <% } %>
+
+    </div>
+
+   
+
+    <script>
+
+      // Function to handle like button click
+      async function handleLike(event) {
+      
+          event.preventDefault(); // Prevent default form submission behavior
+          const button = event.currentTarget;
+          const postId = button.getAttribute('data-postid');
+          const scrollPosition = window.scrollY; // Store current scroll position
+  
+          try {
+              const response = await fetch(`/like/${postId}`, { method: 'POST' });
+              if (response.ok) {
+                  const data = await response.json();
+                  // Update like count on success
+                  const likeCountElement = button.querySelector('.like-count');
+                  if (likeCountElement) {
+                      const newLikeCount = data.likesCount; // Assuming the response returns the updated like count
+                      likeCountElement.textContent = newLikeCount;
+                  }
+                  // Scroll back to the stored position
+                  window.scrollTo(0, scrollPosition);
+                  location.reload()
+              } else {
+                  console.error('Failed to like post');
+              }
+          } catch (error) {
+              console.error('Error occurred while liking post', error);
+          }
+
+      }
+  
+      // Attach click event listener to all like buttons
+      const likeButtons = document.querySelectorAll('.likeButton');
+      likeButtons.forEach(button => {
+          button.addEventListener('click', handleLike);
+      });
+      
+  
+    </script>
+    
+  
+</body>
+</html>
