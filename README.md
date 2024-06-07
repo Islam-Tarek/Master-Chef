@@ -128,7 +128,7 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
    <h2>  Get Single post </h2>
 </summary>
 
-   <details>
+   <details open>
       <summary>
          <h3> sending GET Request [1000 req - 100,000 req] </h3>
       </summary>
@@ -138,7 +138,7 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
       <img src="./docs/performance/stressTest/createGetRequest/getSinglePost/get single post request.png" />
    </details>
 
-   <details>
+   <details open>
       <summary>
          <h3> sending GET Request [110,000 req - 120,000 req] </h3>
       </summary>
@@ -154,7 +154,7 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
    <h2>  Get All posts (all posts = 1000 post) </h2>
 </summary>
 
-<details>
+<details open>
    <summary>
       <h3> sending GET Request (each request rendering 1000 post)</h3>
    </summary>
@@ -173,21 +173,21 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
    <h2> Creating new posts </h2>
 </summary>
 
-   <details>
+   <details open>
       <summary>
          <h3> sending 500 POST Request </h3>
       </summary>
       <h4> handling 500 REQ in ~ 0.9 SEC </h4>
       <img src="./docs/performance/stressTest/createPostRequest/createNewPost/creating 500 new post.png" />
    </details>
-   <details>
+   <details open>
       <summary>
          <h3> sending 10,000 POST Request </h3>
       </summary>
       <h4> handling 10,000 REQ in ~ 15.8 SEC </h4>
       <img src="./docs/performance/stressTest/createPostRequest/createNewPost/creating 10,000 new post.png" />
    </details>
-    <details>
+    <details open>
       <summary>
          <h3> sending 37,000 POST Request </h3>
       </summary>
@@ -204,14 +204,14 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
    <h2> Creating Likes </h2>
 </summary>
 
-   <details>
+   <details open>
       <summary>
          <h3> sending 500 POST Request </h3>
       </summary>
       <h4> handling 500 REQ in ~ 1.1 SEC </h4>
       <img src="./docs/performance/stressTest/createPostRequest/createLikeOnPost/creating 500 like.png" />
    </details>
-   <details>
+   <details open>
       <summary>
          <h3> sending 8,300 POST Request </h3>
       </summary>
