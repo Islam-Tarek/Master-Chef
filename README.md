@@ -45,12 +45,12 @@
 
 </details>
 
+<br/>
 
 -----------------------------------------------------------
 
 ## Architecture
 
-<br/>
 <details open>
 <summary>
   <h3> Pattern : MVC </h3>
@@ -84,35 +84,141 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
 <br>
 </details>
 
-<br/>
-
 
 <details open>
 <summary>
    <h3> Database Schema </h3>
 </summary>
-<br>
    <a href="./docs/architecture/schema.md">
      Schema 
       </a>
 <br>
 </details>
 
-<br/>
 
 <details open>
 <summary>
    <h3> API </h3>
 </summary>
-<br>
    <a href="./docs/architecture/API.md">
      Schema 
       </a>
 <br>
 </details>
 
+<br/>
 
 ----------------------------------------------------------------------
 
-### Performance
+## Performance
+
+### Machine Resources
+- RAM: 8GB
+- Processor: Core i5 12th Generation
+
+
+### Stress Test Details
+   - Number of requests
+   - the total time to handle all request since sending first request to recive the last response
+
+
+
+<details open>
+<summary>
+   <h2>  Get Single post </h2>
+</summary>
+
+   <details>
+      <summary>
+         <h3> sending GET Request [1000 req - 100,000 req] </h3>
+      </summary>
+      <h4> handling 1000 REQ in ~ 0.8 SEC </h4>
+      <h4> handling 10,000 REQ in ~ 6.1 SEC </h4>
+      <h4> handling 100,000 REQ in ~ 49.4 SEC </h4>
+      <img src="./docs/performance/stressTest/createGetRequest/getSinglePost/get single post request.png" />
+   </details>
+
+   <details>
+      <summary>
+         <h3> sending GET Request [110,000 req - 120,000 req] </h3>
+      </summary>
+      <h4> handling 110,000 REQ in ~ 54.2 SEC </h4>
+      <h4> handling 120,000 REQ in ~ 59.8 SEC  (~ per minute) </h4>
+      <img src="./docs/performance/stressTest/createGetRequest/getSinglePost/get single post rquest 2.png" />
+   </details>
+
+</details>
+
+<details open>
+<summary>
+   <h2>  Get All posts (all posts = 1000 post) </h2>
+</summary>
+
+<details>
+   <summary>
+      <h3> sending GET Request (each request rendering 1000 post)</h3>
+   </summary>
+   <h4> handling 150 REQ in ~ 1.1 SEC  [ redering (150req x 1000post) = 150,0000 post / 1.1 sec)</h4>
+   <h4> handling 500 REQ in ~ 3.7 SEC  [ redering (500req x 1000post) = 500,0000 post / 3.7 sec)</h4>
+   <h4> handling 1000 REQ in ~ 7.2 SEC [ redering (1000req x 1000post) = 1,000,0000 post / 7.2 sec)</h4>
+   <h4> handling 8000 REQ in ~ 56.8 SEC [ redering (8000req x 1000post) = 8,000,0000 post / 56.8 sec)</h4>
+   <img src="./docs/performance/stressTest/createGetRequest/getAllposts/get all posts request.png" />
+   </details>
+</details>
+
+
+<details open>
+   
+<summary>
+   <h2> Creating new posts </h2>
+</summary>
+
+   <details>
+      <summary>
+         <h3> sending 500 POST Request </h3>
+      </summary>
+      <h4> handling 500 REQ in ~ 0.9 SEC </h4>
+      <img src="./docs/performance/stressTest/createPostRequest/createNewPost/creating 500 new post.png" />
+   </details>
+   <details>
+      <summary>
+         <h3> sending 10,000 POST Request </h3>
+      </summary>
+      <h4> handling 10,000 REQ in ~ 15.8 SEC </h4>
+      <img src="./docs/performance/stressTest/createPostRequest/createNewPost/creating 10,000 new post.png" />
+   </details>
+    <details>
+      <summary>
+         <h3> sending 37,000 POST Request </h3>
+      </summary>
+      <h4> handling 37,000 REQ in ~ 58.9 SEC (~ per minute) </h4>
+      <img src="./docs/performance/stressTest/createPostRequest/createNewPost/creating 37,000 new post.png" />
+   </details>
+
+</details>
+
+<details open>
+
+
+<summary>
+   <h2> Creating Likes </h2>
+</summary>
+
+   <details>
+      <summary>
+         <h3> sending 500 POST Request </h3>
+      </summary>
+      <h4> handling 500 REQ in ~ 1.1 SEC </h4>
+      <img src="./docs/performance/stressTest/createPostRequest/createLikeOnPost/creating 500 like.png" />
+   </details>
+   <details>
+      <summary>
+         <h3> sending 8,300 POST Request </h3>
+      </summary>
+      <h4> handling 8,300 REQ in ~ 59.7 SEC  (~ per minute) </h4>
+      <img src="./docs/performance/stressTest/createPostRequest/createLikeOnPost/creating 8,300 like.png" />
+   </details>
+
+</details>
+
 
