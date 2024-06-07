@@ -117,6 +117,15 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
 - RAM: 8GB
 - Processor: Core i5 12th Generation
 
+<details >
+<summary>
+   <h4> machine resources </h4>
+</summary>
+         <img src="./docs/performance/machine resources.png" />
+
+</details>
+
+
 
 ### Stress Test Details
    - Number of requests
