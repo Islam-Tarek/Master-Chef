@@ -2,8 +2,13 @@
 
 **Master Chef** is a platform dedicated to food enthusiasts where users can share, explore, and interact with food recipes. This project facilitates the creation and management of recipe posts, along with user interactions through likes and comments. It provides a seamless experience for users to engage with each other and discover new culinary inspirations
 
-### Features
+<br/>
+<br/>
 
+
+## Features
+
+   
 #### Posts
 - **Create Posts**: Users can create new posts to share their recipes.
 - **Delete Posts**: The author of the post can delete their post.
@@ -38,12 +43,19 @@
 - **Biography Section**: Users can write a brief "about" section to share more about themselves.
 - **Real-Time Like Updates**: When a user likes or unlikes a post, the total number of likes on their profile updates in real-time.
 
-
-### Architecture
-
-**Pattern : MVC**
+</details>
 
 
+-----------------------------------------------------------
+
+## Architecture
+
+<br/>
+<details open>
+<summary>
+  <h3> Pattern : MVC </h3>
+</summary>
+<br>
 **Master Chef** follows the Model-View-Controller (MVC) architectural pattern. This pattern separates the application into three main components:
 
 1. **Model**
@@ -57,17 +69,50 @@
 
 By using the MVC pattern, Master Chef ensures a clean separation of concerns, making the codebase more modular, scalable, and maintainable.
 
+<br/>
+</details>
 
-**Entity Relation Diagram**
 
-![ERD](./docs/architecture/ERDPic.png)
+<br/>
 
-**Database Schema**
+<details open>
+<summary>
+   <h3> Entity Relation Diagram </h3>
+</summary>
+<br>
+   <img src="./docs/architecture/ERDPic.png" />
+<br>
+</details>
 
-[Schema](./docs/architecture/schema.md)
+<br/>
 
-**API**
 
-[HTTP Requests (end points)](./docs/architecture/API.md)
+<details open>
+<summary>
+   <h3> Database Schema </h3>
+</summary>
+<br>
+   <a href="./docs/architecture/schema.md">
+     Schema 
+      </a>
+<br>
+</details>
 
+<br/>
+
+<details open>
+<summary>
+   <h3> API </h3>
+</summary>
+<br>
+   <a href="./docs/architecture/API.md">
+     Schema 
+      </a>
+<br>
+</details>
+
+
+----------------------------------------------------------------------
+
+### Performance
 
