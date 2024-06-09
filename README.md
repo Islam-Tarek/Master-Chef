@@ -3,6 +3,7 @@
 
 **Master Chef** is a platform dedicated to food enthusiasts where users can share, explore, and interact with food recipes. This project facilitates the creation and management of recipe posts, along with user interactions through likes and comments. It provides a seamless experience for users to engage with each other and discover new culinary inspirations
 
+
 <br/>
 <br/>
 
@@ -102,7 +103,7 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
    <h3> API </h3>
 </summary>
    <a href="./docs/architecture/API.md">
-     Schema 
+     API 
       </a>
 <br>
 </details>
@@ -140,7 +141,7 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
 
    <details open>
       <summary>
-         <h3> sending GET Request [1000 req - 100,000 req] </h3>
+         <h3> sending GET Request [ 1000 req - 100,000 req ] </h3>
       </summary>
       <h4> handling 1000 REQ in ~ 0.8 SEC </h4>
       <h4> handling 10,000 REQ in ~ 6.1 SEC </h4>
@@ -150,7 +151,7 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
 
    <details open>
       <summary>
-         <h3> sending GET Request [110,000 req - 120,000 req] </h3>
+         <h3> sending GET Request [ 110,000 req - 120,000 req ] </h3>
       </summary>
       <h4> handling 110,000 REQ in ~ 54.2 SEC </h4>
       <h4> handling 120,000 REQ in ~ 59.8 SEC  (~ per minute) </h4>
@@ -168,10 +169,10 @@ By using the MVC pattern, Master Chef ensures a clean separation of concerns, ma
    <summary>
       <h3> sending GET Request (each request rendering 1000 post)</h3>
    </summary>
-   <h4> handling 150 REQ in ~ 1.1 SEC  [ redering (150req x 1000post) = 150,0000 post / 1.1 sec)</h4>
-   <h4> handling 500 REQ in ~ 3.7 SEC  [ redering (500req x 1000post) = 500,0000 post / 3.7 sec)</h4>
-   <h4> handling 1000 REQ in ~ 7.2 SEC [ redering (1000req x 1000post) = 1,000,0000 post / 7.2 sec)</h4>
-   <h4> handling 8000 REQ in ~ 56.8 SEC [ redering (8000req x 1000post) = 8,000,0000 post / 56.8 sec)</h4>
+   <h4> handling 150 REQ in ~ 1.1 SEC  [ redering (150req x 1000post) = 150,0000 post / 1.1 sec ]</h4>
+   <h4> handling 500 REQ in ~ 3.7 SEC  [ redering (500req x 1000post) = 500,0000 post / 3.7 sec ]</h4>
+   <h4> handling 1000 REQ in ~ 7.2 SEC [ redering (1000req x 1000post) = 1,000,0000 post / 7.2 sec ]</h4>
+   <h4> handling 8000 REQ in ~ 56.8 SEC [ redering (8000req x 1000post) = 8,000,0000 post / 56.8 sec ]</h4>
    <img src="./docs/performance/stressTest/createGetRequest/getAllposts/get all posts request.png" />
    </details>
 </details>
